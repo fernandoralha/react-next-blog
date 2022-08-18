@@ -1,8 +1,23 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import { ThemeProvider } from 'styled-components'
+import Header from '../components/Header'
+import GlobalStyles from '../styles/globalStyles'
+import { light } from '../styles/theme'
+import Footer from '../components/Footer'
+import Content from '../components/Content'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={light}>
+      <Header />
+      <Content>
+        <Component {...pageProps} />
+      </Content>
+      <Footer/>
+      <GlobalStyles />
+    </ThemeProvider>
+  )
 }
 
 export default MyApp
