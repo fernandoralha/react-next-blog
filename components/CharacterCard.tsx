@@ -68,20 +68,14 @@ const Thumbnail = styled.div<{ bg: string }>`
   background-size: cover;
   border-bottom: 4px solid ${(p => p.theme.primaryBackground)};
 
-  border-top-left-radius: ${(p) => p.theme.borderRadius};
-  border-top-right-radius: ${(p) => p.theme.borderRadius};
 `;
 
 
 const Wrapper = styled.a`
   position: relative;
   min-height: 256px;
-  z-index: 1;
   background-color: ${(p) => p.theme.activeElementBackground};
   color: ${(p) => p.theme.activeElementForeground};
-  border-radius: ${(p) => p.theme.borderRadius};
-  box-shadow: 0 3px 6px
-    ${(p) => transparentize(0.9, p.theme.activeElementForeground)};
 
   transition: 0.25s ease;
 
@@ -92,8 +86,6 @@ const Wrapper = styled.a`
   &:hover,
   &:focus {
     background-color: ${(p) => p.theme.primaryBackground};
-    box-shadow: 0 0 0 4px
-      ${(p) => transparentize(0.7, p.theme.primaryBackground)};
 
     outline: none;
 
@@ -101,6 +93,19 @@ const Wrapper = styled.a`
       color: ${(p) => p.theme.primaryForeground};
     }
     transform: scale(1.1);
-    z-index: 999;
+    // z-index: -999;
+  }
+
+  &:before {
+    content:" ";
+    position:absolute;
+    // border-bottom:1px solid #000;
+    height:10px;
+    width:10px;
+    transform: rotate(-50deg);
+    bottom:-5px;
+    right: -5px;
+    background: ${(p => p.theme.pageBackground)};
+    // background: blue
   }
 `;
