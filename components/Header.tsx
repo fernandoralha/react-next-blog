@@ -1,6 +1,6 @@
 import { transparentize } from "polished"
 import styled from "styled-components"
-import { HEADER_HEIGHT, MOBILE_HEADER_HEIGHT } from "../core/common/constants"
+import { Constants } from "../core/common/constants"
 import Logo from "./Logo"
 import NavBar from "./NavBar"
 
@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     box-shadow: 0 3px 10px ${(p) => transparentize(0.9, p.theme.pageForeground)};
 
     width: 100%;
-    height: ${HEADER_HEIGHT}px;
+    height: ${Constants.HEADER_HEIGHT}px;
 
     position: fixed;
     top: 0;
@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     z-index: 10;
 
     @media screen and (max-width: 767px) {
-    height: ${MOBILE_HEADER_HEIGHT}px;
+    height: ${Constants.MOBILE_HEADER_HEIGHT}px;
     }
 `;
 

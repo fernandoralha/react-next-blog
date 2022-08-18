@@ -8,9 +8,10 @@ class Service {
 }
 
 function getData<T> (res: AxiosResponse<T>) {
-  return res.data
+  const result: any = res.data;
+  return result.data;
 }
 
-Http.defaults.baseURL = 'http://localhost:8080'
+Http.defaults.baseURL = 'https://gateway.marvel.com/v1/public'
 
 export default Service

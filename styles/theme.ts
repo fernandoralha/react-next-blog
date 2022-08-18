@@ -3,8 +3,8 @@ import { DefaultTheme } from "styled-components";
 export const light: DefaultTheme = {
   pageBackground: "#F3F8FA",
   pageForeground: "#274060",
-  activeElementBackground: "#FFFFFF",
-  activeElementForeground: "#274060",
+  activeElementBackground: "#151615",
+  activeElementForeground: "#bcbbbb",
   borderRadius: "10px",
   inactiveElementBackground: "#EFEFEF",
   inactiveElementForeground: "#959595",

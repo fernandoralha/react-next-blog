@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { transparentize } from "polished";
 import Logo from "./Logo";
-import { FOOTER_HEIGHT } from "../core/common/constants";
+import { Constants } from "../core/common/constants";
 
 export default function Footer(props: any) {
   return (
@@ -19,7 +19,7 @@ const Wrapper = styled.footer`
   color: ${(p) => p.theme.activeElementForeground};
 
   width: 100%;
-  height: ${FOOTER_HEIGHT}px;
+  height: ${Constants.FOOTER_HEIGHT}px;
 `;
 
 const Container = styled.div`
