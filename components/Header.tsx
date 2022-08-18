@@ -30,7 +30,7 @@ const Wrapper = styled.div`
     z-index: 10;
 
     @media screen and (max-width: 767px) {
-    height: ${Constants.MOBILE_HEADER_HEIGHT}px;
+        height: ${Constants.MOBILE_HEADER_HEIGHT}px;
     }
 `;
 

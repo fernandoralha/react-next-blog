@@ -38,6 +38,7 @@ const Title = styled.div`
     text-transform: uppercase;
     font-weight: bolder;
     font-size: 0.9rem;
+    max-width: 80%;
 `;
 
 const Info = styled.div`
@@ -74,38 +75,33 @@ const Thumbnail = styled.div<{ bg: string }>`
 const Wrapper = styled.a`
   position: relative;
   min-height: 256px;
-  background-color: ${(p) => p.theme.activeElementBackground};
+  // background-color: ${(p) => p.theme.activeElementBackground};
   color: ${(p) => p.theme.activeElementForeground};
 
-  transition: 0.25s ease;
-
-  * {
-    transition: 0.25s ease;
-  }
+  background-image: linear-gradient(to top, ${(p) => p.theme.activeElementBackground} 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: bottom;
+  transition: background-position 0.2s ease-in-out;
 
   &:hover,
   &:focus {
     background-color: ${(p) => p.theme.primaryBackground};
-
     outline: none;
-
     * {
       color: ${(p) => p.theme.primaryForeground};
     }
     transform: scale(1.1);
-    // z-index: -999;
+    background-position: top;
   }
 
   &:before {
     content:" ";
     position:absolute;
-    // border-bottom:1px solid #000;
     height:10px;
     width:10px;
     transform: rotate(-50deg);
     bottom:-5px;
     right: -5px;
     background: ${(p => p.theme.pageBackground)};
-    // background: blue
   }
 `;
